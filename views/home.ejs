@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+  <div class="mb-2">
+    <h1>Home</h1>
+    <p class="my-0">
+      <%= startingContent %>
+    </p>
+  </div>
+
+
+
+  <% posts.forEach(post=> {%>
+    <div class="mb-2">
+      <h1>
+        <%= post.title %>
+      </h1>
+      <p class="d-inline-block my-0 ps-1">
+        <%= post.content.substring(0,160) + " ..." %>
+      </p>
+      <a class="text-decoration-none ps-1" href="/posts/<%= post._id %>">read more</a>
+    </div>
+    <%})%>
+
+      <%- include("partials/footer") -%>
